@@ -3,14 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 	<style>
+
 		.flip-card {
 		  background-color: transparent;
 		  width: 320px;
 		  height: 520px;
 		  perspective: 1000px; 
-		  /*background: red;*/
 		}
+
 		.flip-card-inner {
 		  position: relative;
 		  width: 100%;
@@ -20,10 +23,6 @@
 		  transform-style: preserve-3d;
 		}
 
-		.flip-card:hover .flip-card-inner {
-		  transform: rotateY(180deg);
-		}
-		
 		.flip-card-front, 
 		.flip-card-back {
 		  position: absolute;
@@ -31,29 +30,64 @@
 		  height: 100%;
 		  backface-visibility: hidden;
 		}
+		
 		.flip-card-front {
 		  background-color: #bbb;
 		  color: black;
 		}
 		.flip-card-back {
-		  background-color: dodgerblue;
+		  background-color: #000;
 		  color: white;
+		}
+
+		.flipX .flip-card-back {
+		  transform: rotateX(180deg);
+		}
+		.flip-card:hover .flipX {
+		  transform: rotateX(180deg);
+		}
+
+
+		.flipY .flip-card-back {
 		  transform: rotateY(180deg);
 		}
+		.flip-card:hover .flipY {
+		  transform: rotateY(180deg);
+		}
+
 
 
 	</style>
 </head>
 <body>
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	      <h2>Front</h2>
-	    </div>
-	    <div class="flip-card-back">
-	      <h1>Back</h1> 
-	    </div>
-	  </div>
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-4">
+				<div class="flip-card">
+				  <div class="flip-card-inner flipX">
+				    <div class="flip-card-front">
+				      <h2>Front flipX</h2>
+				    </div>
+				    <div class="flip-card-back">
+				      <h1>Back flipX</h1> 
+				    </div>
+				  </div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="flip-card">
+				  <div class="flip-card-inner flipY">
+				    <div class="flip-card-front">
+				      <h2>Front flipY</h2>
+				    </div>
+				    <div class="flip-card-back">
+				      <h1>Back flipY</h1> 
+				    </div>
+				  </div>
+			</div>
+		</div>
 	</div>
+	</div>
+
 </body>
 </html>
